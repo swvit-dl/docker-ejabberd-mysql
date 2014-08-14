@@ -27,6 +27,8 @@ ADD ./ejabberdctl.cfg /opt/ejabberd/conf/ejabberdctl.cfg
 
 RUN sed -i "s/ejabberd.cfg/ejabberd.yml/" /opt/ejabberd/bin/ejabberdctl
 
+ADD ./start.sh /start.sh
+RUN chmod +x /start.sh
+
 EXPOSE 5222 5269 5280
-CMD ["live"]
-ENTRYPOINT ["/opt/ejabberd/bin/ejabberdctl"]
+CMD ["/start.sh"]
