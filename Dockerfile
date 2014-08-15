@@ -31,4 +31,7 @@ ADD ./start.sh /start.sh
 RUN chmod +x /start.sh
 
 EXPOSE 5222 5269 5280
+
+VOLUME ["/opt/ejabberd/database"]
+
 CMD ["/start.sh"]
